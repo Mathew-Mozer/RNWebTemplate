@@ -1,31 +1,19 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
- */
-
 import React from 'react';
-import {
-  SafeAreaView,
-  StyleSheet,
-  ScrollView,
-  View,
-  Text,
-  StatusBar,
-} from 'react-native';
-import {Router} from './routing';
+import { Provider } from 'react-redux';
+import ConfigureStore from './redux/configureStore';
+import { Router } from './routing';
+
+import Main from './components/MainComponent';
+
+const store = ConfigureStore();
 
 const App = () => {
   return (
-    <>
-      <StatusBar barStyle="dark-content" />
-      <View>
-        <Text>test</Text>
-        <Router></Router>
-      </View>
-    </>
+    <Provider store={store}>
+      <Router>
+        <Main />
+      </Router>
+    </Provider>
   );
 };
 
