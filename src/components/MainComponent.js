@@ -16,6 +16,13 @@ const Main = () => {
     }
   }, [user.uid, history]);
 
+  const LoginUser = () => {
+    dispatch({
+      type: 'UPDATE_USER_DATA',
+      payload: { uid: 8675309 },
+    });
+  };
+
   console.log('app', history);
   return (
     <View>
@@ -25,15 +32,7 @@ const Main = () => {
         <Route path="/Login">
           <View>
             <Text>Login</Text>
-            <Button
-              title="Login"
-              onPress={() =>
-                dispatch({
-                  type: 'UPDATE_USER_DATA',
-                  payload: { uid: 8675309 },
-                })
-              }
-            />
+            <Button title="Login" onPress={() => LoginUser()} />
           </View>
         </Route>
       </Switch>
