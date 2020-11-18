@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
 import { View, Text, Button } from 'react-native';
 import { useSelector, useDispatch } from 'react-redux';
-import { Router, Route, Switch, useHistory } from '../routing';
+import { Route, Switch, useHistory } from '../routing';
+import Home from './HomeComponent';
 
 import PrivateRoute from './PrivateRoute';
 
@@ -23,7 +24,6 @@ const Main = () => {
     });
   };
 
-  console.log('app', history);
   return (
     <View>
       <Text>SwQuity</Text>
@@ -36,14 +36,6 @@ const Main = () => {
           </View>
         </Route>
       </Switch>
-    </View>
-  );
-};
-
-const Home = () => {
-  return (
-    <View>
-      <Text>Home</Text>
     </View>
   );
 };
